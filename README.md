@@ -143,20 +143,20 @@ Tất cả những điều trong *Danh sách kiểm tra hiệu suất Front-End*
 
 ![css]
 
-- [ ] **Giảm thiểu:** ![high] Tất cả file CSS đều phải Giảm thiểu, các comment, khoảng trắng và các dòng mới phải được loại bỏ khỏi các file trong production.
+- [ ] **Rút gọn:** ![high] Tất cả file CSS đều phải rút gọn, các comment, khoảng trắng và các dòng mới phải được loại bỏ khỏi các file trong production.
 
     *Vì sao:*
-    > Khi các file CSS được Giảm thiểu, nội dung được tải nhanh hơn và tốn ít dữ liệu được gửi về cho client hơn. Điều quan trọng là phải luôn luôn giảm thiểu các file CSS trong bản production. Nó có lợi cho người dùng vì nó áp dụng cho bất kì doanh nghiệp nào muốn giảm thiểu chi phí băng thông và lượng tài nguyên sử dụng.
+    > Khi các file CSS được rút gọn, nội dung được tải nhanh hơn và tốn ít dữ liệu được gửi về cho client hơn. Điều quan trọng là phải luôn luôn rút gọn các file CSS trong bản production. Nó có lợi cho người dùng vì nó áp dụng cho bất kì doanh nghiệp nào muốn giảm thiểu chi phí băng thông và lượng tài nguyên sử dụng.
 
     *Làm như nào:*
-    > ⁃ Sử dụng các công cụ để Giảm thiểu các file của bạn tự động trước hoặc trong khi xây dựng hay phát triển sản phẩm của bạn.
+    > ⁃ Sử dụng các công cụ để rút gọn các file của bạn tự động trước hoặc trong khi xây dựng hay phát triển sản phẩm của bạn.
 
     * 🛠 [cssnano: Một modular tối giản dựa trên hệ thống PostCSS. - cssnano](https://cssnano.co/)
     * 🛠 [@neutrinojs/style-minify - npm](https://www.npmjs.com/package/@neutrinojs/style-minify)
     * 🛠 [Nén CSS online](http://refresh-sf.com)
 
 
-- [ ] **sự liên hệ:** ![medium] Các file CSS được ghép lại thành file duy nhất *(Không phải lúc nào cũng phù hợp với HTTP/2)*.
+- [ ] **sự liên kết:** ![medium] Các file CSS được ghép lại thành file duy nhất *(Không phải lúc nào cũng phù hợp với HTTP/2)*.
 
     ```html
 
@@ -233,7 +233,7 @@ Tất cả những điều trong *Danh sách kiểm tra hiệu suất Front-End*
      * 📖 [Giảm kích thước của content trong màn hình đầu tiên
 ](https://developers.google.com/speed/docs/insights/PrioritizeVisibleContent)
 
-- [ ] **CSS nhúng hay inline:** ![high] Tránh việc sử dụng CSS nhúng hoặc inline trong thẻ `<body>` *(Not valid for HTTP/2)*
+- [ ] **CSS nhúng hay inline:** ![high] Tránh việc sử dụng CSS nhúng hoặc inline trong thẻ `<body>` *(Không đúng với HTTP/2)*
 
     *Vì sao:*
     > Một trong những lý do đầu tiên là vì nó là một cách hay để **phân chia nội dung riêng biệt từ thiết kế**. Nó cũng giúp bạn có khả năng bảo trì code dễ dành hơn và website của bạn luôn truy cập được. Nhưng liên quan tới vấn đề hiệu suất, nó khá đơn giản vì nó giúp giảm kích thước của file và thời gian tải trang HTML.
@@ -359,7 +359,7 @@ Tất cả những điều trong *Danh sách kiểm tra hiệu suất Front-End*
 
     *Vì sao:*
     
-    > Nếu chiều cao và chiều rộng được đặt, đã có phần không gian yêu cầu cho hình ảnh đã được đặt riêng khi tải trang.  nhiên, nếu không có các thuộc tính này, trình duyệt không s được kích thước của ảnh và không thể dự trữ không gian thích hợp cho nó. Hiệu ứng sau đó sẽ là bố cục trang bị thay đổi trong khi tải (trong khi tải ảnh).
+    > Nếu chiều cao và chiều rộng được đặt, đã có phần không gian yêu cầu cho hình ảnh đã được đặt riêng khi tải trang.  nhiên, nếu không có các thuộc tính này, trình duyệt không bi được kích thước của ảnh và không thể dự trữ không gian thích hợp cho nó. Hiệu ứng sau đó sẽ là bố cục trang bị thay đổi trong khi tải (trong khi tải ảnh).
     
 * [ ] **Tránh việc sử dụng hình ảnh Base64:** ![medium] Cuối cùng thì bạn có thể chuyển đổi các ảnh nhỏ sang dạng base64 nhưng nó thực sự không phải là phương pháp hay.
 
@@ -368,7 +368,7 @@ Tất cả những điều trong *Danh sách kiểm tra hiệu suất Front-End*
     * 📖 [Khi nào thì nên mã hóa base64 (và khi nào thì không) | David Calhoun](https://www.davidbcalhoun.com/2011/when-to-base64-encode-images-and-when-not-to/)
    * 📖 [Mã hóa hình ảnh bằng base64 để các trang nhanh hơn | Các yếu tố về hiệu năng và seo](https://varvy.com/pagespeed/base64-images.html)
 
-* [ ] **Lazy loading:** ![medium] Các hình ảnh trên màn hình được tải một cách lười biếng. (Một noscript fallback luôn được cung cấp sẵn). 
+* [ ] **Lazy loading:** ![medium] Các hình ảnh trên màn hình được tải sau. (Một noscript fallback luôn được cung cấp sẵn). 
 
     *Vì sao:
     > Nó sẽ cải thiện được thời gian trả về của trang hiện tại và sau đó tránh tải nhũng hình ảnh không cần thiết mà user có thể không cần tới.
@@ -400,7 +400,7 @@ Tất cả những điều trong *Danh sách kiểm tra hiệu suất Front-End*
 
 ![javascript]
 
-- [ ] **Giảm thiểu JS:** ![high] Tất cả các file Javascript đều phải tối giản, các comments, khoảng trắng và dòng trống đều phải được loại bỏ khỏi các file của production. *(Vẫn hợp lệ nếu sử dụng HTTP/2)*.
+- [ ] **Rút gọn JS:** ![high] Tất cả các file Javascript đều phải tối giản, các comments, khoảng trắng và dòng trống đều phải được loại bỏ khỏi các file của production. *(Vẫn hợp lệ nếu sử dụng HTTP/2)*.
 
     *Vì sao:*
     > xóa toàn bộ các khoảng trống, comments và xuống dòng không cần thiết sẽ giảm được kích thước các file Javascript của bạn và tăng tốc tải trang và giảm nhẹ được dung lượng user tải về.
@@ -528,7 +528,7 @@ phân tích điều gì khiến sản phẩm của bạn bị chậm đi và s�
     * 🛠 [Kiểm tra hiệu năng và tốc độ website trên mobile của bạn - Think With Google](https://testmysite.thinkwithgoogle.com/intl/en-us)
     * 📖 [Thời gian tải trang trung bình năm 2018 - Bạn đã so sánh như thế nào? - MachMetrics Speed Blog](https://www.machmetrics.com/speed-blog/average-page-load-times-websites-2018/)
 
-- [ ] **Thời gian cho Byte đầu tiên nhỏ hơn 1.3 giây:** ![high] Giảm nhiều nhất thwofi gian trình duyệt chờ nhận dữ liệu mà bạn có thể.
+- [ ] **Thời gian cho Byte đầu tiên nhỏ hơn 1.3 giây:** ![high] Giảm nhiều nhất thờii gian trình duyệt chờ nhận dữ liệu mà bạn có thể.
 
     * 📖 [Waiting là gì (TTFB) trên DevTools, và phải làm gì với nó](https://scaleyourcode.com/blog/article/27)
     * 📖 [Theo dõi server của bạn dễ dàng với các công cụ miễn phí](https://scaleyourcode.com/blog/article/7)
